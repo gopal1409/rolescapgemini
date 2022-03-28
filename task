@@ -26,3 +26,24 @@
     name: apache2
     state: restarted
 
+#adding another role
+ 319  ansible-glaxy init patch
+ 321  nano patch/tasks/checkkernal.yml
+---
+- name: check the kernal version
+  shell: uname -r
+  register: curr_ker
+- name: show the kernal version
+  debug: msg={{curr_ker.stdout}}
+
+
+ nano patch/tasks/main.yml
+ - import_tasks: checkkernal.yml
+#to execute the same
+nao play.yml
+  GNU nano 4.8                                                                               play.yml
+---
+- hosts: all
+  roles:
+  - apache
+  - patch
