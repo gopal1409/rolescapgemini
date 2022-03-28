@@ -1,0 +1,22 @@
+288  nano apache/tasks/main.yml
+#inside main.yml file
+---
+# tasks file for apache
+- import_task: install.yml
+
+  289  cat apache/tasks/main.yml
+  290  nano apache/tasks/install.yml
+  # inside install.yml
+  ---
+- name: installtion of apache
+  apt:
+    name: apache2
+    state: present
+
+  291  tree apache
+  292  nano play.yml
+  ---
+  - hosts: all
+     roles:
+     - apache
+
