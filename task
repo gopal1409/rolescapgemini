@@ -17,6 +17,6 @@
   292  nano play.yml
   ---
   - hosts: all
-     roles:
+    roles:
      - apache
 
