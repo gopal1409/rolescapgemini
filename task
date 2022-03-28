@@ -19,4 +19,10 @@
   - hosts: all
     roles:
      - apache
+#exercise
+---
+- name: service started or restart
+  service:
+    name: apache2
+    state: restarted
 
